@@ -1,0 +1,20 @@
+1.  # Displays the home path
+echo $HOME
+
+2.  # Displays the memory information of your config
+ls /proc | grep mem
+
+# Displays the CPU information of your config
+ls /proc | grep cpu
+
+3.  # Checks for OS release information
+ls /etc | grep release
+
+# Displays detailed OS release info
+cat /etc/os-release
+
+4.  # Extracts top 3 most frequent values from column 8 for 2019-04-02
+grep '2019-04-02' 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -3 | cut -d' ' -f4
+
+# Extracts top 3 most frequent values from column 8 for 2019-04-10
+grep '2019-04-10' 2019-04.csv | cut -d',' -f8 | sort | uniq -c | sort -nr | head -3 | cut -d' ' -f4
