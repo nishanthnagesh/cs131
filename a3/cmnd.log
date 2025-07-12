@@ -1,0 +1,54 @@
+#!/usr/bin/awk -f
+#This is the function call where I calculated the average 
+function average(total, count) {
+    return total / count
+}
+#The begin statement to detect the CSV
+BEGIN {
+    FS = ","
+}
+
+NR == 1 {
+    subjectCount = NF - 2
+    next
+}
+
+{
+    student = $2
+    sum = 0
+#For loop to iterate through the number of students and get the record 
+    for (i = 3; i <= NF; i++) sum += $i
+
+    totalScore[student] = sum
+#Calculate the average with the two parameters
+    avg = average(sum, subjectCount)
+
+    if (avg >= 70)
+        status = "Pass"
+    else
+        status = "Fail"
+
+    if (NR == 2) {
+        highest = sum
+        lowest = sum
+    } else {
+        if (sum > highest) {
+            highest = sum
+            topStudent = student
+        }
+
+        if (sum < lowest) {
+            lowest = sum
+            bottomStudent = student
+        }
+    }
+}
+#Finding the highest if there are multiple
+END {
+    for (i in totalScore) {
+        if (totalScore[i] == highest)
+            dummy1 = 1
+        if (totalScore[i] == lowest)
+            dummy2 = 1
+    }
+}

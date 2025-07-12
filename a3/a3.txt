@@ -1,0 +1,46 @@
+Student Results
+===============
+Name: Alice
+  Total: 253
+  Average: 84.3333
+  Status: Pass
+
+Name: Bob
+  Total: 246
+  Average: 82
+  Status: Pass
+
+Name: Charlie
+  Total: 270
+  Average: 90
+  Status: Pass
+
+Name: Bob
+  Total: 270
+  Average: 90
+  Status: Pass
+
+Name: David
+  Total: 195
+  Average: 65
+  Status: Fail
+
+Name: Tim
+  Total: 195
+  Average: 65
+  Status: Fail
+
+Name: Eve
+  Total: 265
+  Average: 88.3333
+  Status: Pass
+
+Students who scored highest
+---------------------------
+Name: Bob with score 270
+Name: Charlie with score 270
+
+Students who scored lowest
+---------------------------
+Name: David with score 195
+Name: Tim with score 195
